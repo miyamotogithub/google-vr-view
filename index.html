@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head><title>Google VR View</title>
+<meta name="viewport" content="width=device-width,user-scalable=0"/>
+</head>
+<style type="text/css">
+<!--
+body {
+user-select: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;	
+font-family:arial;
+font-weight:bold;
+}
+.l-content {
+width: 1200px;
+margin: 0 auto;
+}
+.p-vrview {
+width: 600px;
+height: 300px;
+margin: 50px auto;
+}
+-->
+</style>
+<link rel="shortcut icon" href="#" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/lib/jquery.min.js"><\/script>')</script>
+<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+<script type="text/javascript">
+window.addEventListener('load', onVrViewLoad);
+function onVrViewLoad() {
+    var state = null;
+    var vrView = new VRView.Player('#vrview', {
+    /*video: 'vrview.mp4',*/
+    image: 'vrview.jpg',
+    width: '100%',
+    height: '100%',
+    is_autopan_off: true
+    });
+    /*vrView.on('ready', function() {
+        vrView.pause();
+        state = 'pause';
+    });
+    vrView.on('click', function() {
+        switch (state) {
+        case 'pause':
+            vrView.play();
+            state = 'play';
+            break;
+        default:
+            vrView.pause();
+            state = 'pause';
+            break;
+        }
+    });
+    vrView.on('error', function(e) {
+        console.log(e);
+    });*/
+}
+</script>
+<body oncontextmenu="return false;">
+<div class="l-content">
+<div id="vrview" class="p-vrview"></div>
+</div>
+</body>
+</html>
